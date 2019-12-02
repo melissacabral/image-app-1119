@@ -36,4 +36,38 @@ function count_comments( $post_id = 0 ){
 	
 }
 
+
+
+//Helper functions for sanitizing all types of data
+
+//remove SQL injection, HTML tags, script tags from strings
+function clean_string( $dirty ){
+	global $db;
+	//remove HTML and scripts
+	$dirty = filter_var( $dirty, FILTER_SANITIZE_STRING );
+	//escape dangerous SQL
+	return mysqli_real_escape_string( $db, $dirty );
+}
+
+
+
+//Form Feedback Output HTML - Error or success
+function feedback_display( $message, $class = 'error', $list = array() ){
+	?>
+	<div class="feedback <?php echo $class; ?>">
+		<h2><?php echo $message; ?></h2>
+		
+		<?php if( ! empty($list) ){ ?>
+		<ul>
+			<?php foreach( $list AS $item ){ ?>
+			<li><?php echo $item; ?></li>
+			<?php } //end foreach ?>
+		</ul>
+		<?php }//end if ?>
+
+	</div>
+	<?php
+}
+
+
 //no close php

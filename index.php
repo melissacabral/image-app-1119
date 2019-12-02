@@ -62,9 +62,10 @@
 				
 				<div class="post">
 					<!-- <pre><?php print_r($post); ?></pre> -->
-
-					<img src="<?php echo $post['image']; ?>" 
-						alt="<?php echo $post['title']; ?>" class="post-image">
+					<a href="single.php?post_id=<?php echo $post['post_id']; ?>">
+						<img src="<?php echo $post['image']; ?>" 
+							alt="<?php echo $post['title']; ?>" class="post-image">
+					</a>
 					<h3><?php echo $post['title']; ?></h3>
 					<h4><?php echo $post['username']; ?></h4>
 					<h5><?php count_comments( $post['post_id'] ); ?></h5>
