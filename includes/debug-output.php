@@ -1,5 +1,4 @@
 <?php if( DEBUG_MODE ){ ?>
-	made a change here
 <div class="debug-output">
 	<h2>POST data:</h2>
 	<pre><?php print_r( $_POST ); ?></pre>
