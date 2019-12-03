@@ -15,6 +15,12 @@ include_once('includes/functions.php');
 		<nav class="main-menu">
 			<h1 class="logo"><a href="index.php">Image App Name</a></h1>
 
+			<form method="get" action="search.php" class="search">
+				<input type="search" name="phrase" placeholder="Search" 
+					value="<?php echo $_GET['phrase']; ?>">
+				<input type="submit" value="go" class="button button-outline">
+			</form>
+
 			<ul class="menu-links">
 				<li><a href="#" class="button button-clear">Sign Up</a></li>
 				<li><a href="#" class="button button-clear">Log In</a></li>
