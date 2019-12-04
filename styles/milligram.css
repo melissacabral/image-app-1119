@@ -145,11 +145,11 @@ code {
   padding: .2rem .5rem;
   white-space: nowrap; }
 
-pre {
+pre, .feedback {
   background: #f4f5f6;
   border-left: 0.3rem solid tomato;
   overflow-y: hidden; }
-  pre > code {
+  pre > code, .feedback > code {
     border-radius: 0;
     display: block;
     padding: 1rem 1.5rem;
@@ -219,7 +219,7 @@ input[type='radio'] {
   font-weight: normal;
   margin-left: .5rem; }
 
-.container, .big-section {
+.container, .big-section, .narrow-section {
   margin: 0 auto;
   max-width: 112.0rem;
   padding: 0 2.0rem;
@@ -369,6 +369,7 @@ form,
 ol,
 p,
 pre,
+.feedback,
 table,
 ul {
   margin-bottom: 2.5rem; }
@@ -476,9 +477,12 @@ body {
   padding: 10vh 2vw;
   background-color: #ffcfc7; }
 
-.big-section {
+.big-section, .narrow-section {
   margin-top: 10vh;
   margin-bottom: 10vh; }
+
+.narrow-section {
+  max-width: 600px; }
 
 /* nav bar */
 .main-menu {
@@ -504,10 +508,15 @@ body {
         .main-menu .menu-links li a:hover {
           color: tomato; }
 
-.search input[type="search"],
-input[type="search"] + button {
-  display: inline;
-  width: auto; }
+.search {
+  margin: 0; }
+  .search input[type="search"],
+  .search input[type="search"] + button {
+    display: inline;
+    width: auto;
+    color: white; }
+  .search input {
+    margin-bottom: 0; }
 
 .grid {
   display: grid;
@@ -518,5 +527,15 @@ input[type="search"] + button {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
   .grid > * {
     max-width: 100%; }
+
+.feedback {
+  border-left-color: #606c76;
+  padding: .5em; }
+  .feedback.error {
+    border-left-color: #FF6464;
+    background-color: rgba(255, 100, 100, 0.2); }
+  .feedback.success {
+    border-left-color: #85DF7E;
+    background-color: rgba(133, 223, 126, 0.2); }
 
 /*# sourceMappingURL=milligram.css.map */
