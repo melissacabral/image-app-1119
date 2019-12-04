@@ -1,12 +1,10 @@
 TODO
 ====
 
-* make search form
-* display search results
 
 * make the login form
 
-* remove hidden field from comment form so it works with the login system
+* remove hidden field ofrom comment form so it works with the login system
 
 
 DONE
@@ -27,3 +25,10 @@ DONE
 * parse the form - sanitize/validate/insert comment into DB
 * make the feedback look good
 * Show the approved comments on each post
+
+* make search form
+* display search results
+
+* make the SALT
+* Add the secret key field
+* make the register form

@@ -48,6 +48,31 @@ function clean_string( $dirty ){
 	//escape dangerous SQL
 	return mysqli_real_escape_string( $db, $dirty );
 }
+//Clean a boolean var so it returns 1 or 0
+function clean_boolean( $dirty ){
+	if( $dirty == 1 ){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+//clean integers
+function clean_int( $dirty ){
+	global $db;
+	//remove HTML and scripts
+	$dirty = filter_var( $dirty, FILTER_SANITIZE_NUMBER_INT );
+	//escape dangerous SQL
+	return mysqli_real_escape_string( $db, $dirty );
+}
+//clean email addresses
+function clean_email( $dirty ){
+	global $db;
+	//remove HTML and scripts
+	$dirty = filter_var( $dirty, FILTER_SANITIZE_EMAIL );
+	//escape dangerous SQL
+	return mysqli_real_escape_string( $db, $dirty );
+}
+
 
 
 

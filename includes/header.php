@@ -22,8 +22,8 @@ include_once('includes/functions.php');
 			</form>
 
 			<ul class="menu-links">
-				<li><a href="#" class="button button-clear">Sign Up</a></li>
-				<li><a href="#" class="button button-clear">Log In</a></li>
+				<li><a href="register.php" class="button button-clear">Sign Up</a></li>
+				<li><a href="login.php" class="button button-clear">Log In</a></li>
 			</ul>
 
 		</nav>

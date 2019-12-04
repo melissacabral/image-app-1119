@@ -10,6 +10,9 @@ $database_host 		= 'localhost';
 //false: live site mode
 define( 'DEBUG_MODE', true );
 
+//SALT for password and cookie security
+define( 'SALT', '895srthh%^$VHNH21%$NBnwerklj558!)&#^#85SDG@&*56VS' );
+
 
 //==============STOP EDITING===========
 

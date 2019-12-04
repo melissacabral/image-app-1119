@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2019 at 08:50 PM
+-- Generation Time: Dec 04, 2019 at 07:49 PM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -72,7 +72,9 @@ INSERT INTO `comments` (`comment_id`, `body`, `date`, `user_id`, `post_id`, `is_
 (3, 'I don\'t love this', '2019-11-24 00:00:00', 2, 2, 1),
 (4, 'this is an approved comment about post 1 by user 2', '2019-11-26 08:01:55', 2, 1, 1),
 (5, 'this is not an approved comment and should not be shown to users', '2019-11-26 08:01:55', 1, 1, 0),
-(6, 'Great job on this post', '2019-11-26 08:39:18', 2, 1, 1);
+(6, 'Great job on this post', '2019-11-26 08:39:18', 2, 1, 1),
+(8, 'Happy Monday to you', '2019-12-02 09:53:27', 2, 4, 1),
+(18, 'This comment is readable!!!', '2019-12-02 11:34:56', 2, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -140,18 +142,22 @@ CREATE TABLE `users` (
   `profile_pic` varchar(40) NOT NULL,
   `bio` text NOT NULL,
   `join_date` datetime NOT NULL,
-  `is_admin` tinyint(1) NOT NULL
+  `is_admin` tinyint(1) NOT NULL,
+  `secret_key` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `profile_pic`, `bio`, `join_date`, `is_admin`) VALUES
-(1, 'Melissa', 'mcabral@platt.edu', 'password', 'randomuser.me/api/portraits/lego/9.jpg', 'I like enchiladas', '2019-11-25 09:55:34', 1),
-(2, 'someguy', 'somebody@mail.com', 'password', 'randomuser.me/api/portraits/lego/7.jpg', 'I\'m not an admin', '2019-11-25 09:58:41', 0),
-(3, 'third user', 'thirdperson@mail.com', 'password', 'randomuser.me/api/portraits/lego/3.jpg', 'hi im a lego person', '2019-11-26 11:30:00', 0),
-(4, 'fourth person', 'number4@email.com', 'password', 'randomuser.me/api/portraits/lego/2.jpg', 'I live in a blue house', '2019-11-26 11:30:37', 0);
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `profile_pic`, `bio`, `join_date`, `is_admin`, `secret_key`) VALUES
+(1, 'Melissa', 'mcabral@platt.edu', '4c0f5323855ad8d62e856e8a90cf4005a62c89ad', 'randomuser.me/api/portraits/lego/9.jpg', 'I like enchiladas', '2019-11-25 09:55:34', 1, ''),
+(2, 'someguy', 'somebody@mail.com', '4c0f5323855ad8d62e856e8a90cf4005a62c89ad', 'randomuser.me/api/portraits/lego/7.jpg', 'I\'m not an admin', '2019-11-25 09:58:41', 0, ''),
+(3, 'third user', 'thirdperson@mail.com', '4c0f5323855ad8d62e856e8a90cf4005a62c89ad', 'randomuser.me/api/portraits/lego/3.jpg', 'hi im a lego person', '2019-11-26 11:30:00', 0, ''),
+(4, 'fourth person', 'number4@email.com', '4c0f5323855ad8d62e856e8a90cf4005a62c89ad', 'randomuser.me/api/portraits/lego/2.jpg', 'I live in a blue house', '2019-11-26 11:30:37', 0, ''),
+(7, 'bananas3', 'me@mail.com', '4c0f5323855ad8d62e856e8a90cf4005a62c89ad', '', '', '2019-12-04 09:59:43', 0, ''),
+(8, 'Turtle Person', 'turtle@email.com', '4c0f5323855ad8d62e856e8a90cf4005a62c89ad', '', '', '2019-12-04 10:34:59', 0, ''),
+(9, 'sample user', 'bla@mail.com', '4c0f5323855ad8d62e856e8a90cf4005a62c89ad', '', '', '2019-12-04 10:47:20', 0, '');
 
 --
 -- Indexes for dumped tables
@@ -201,7 +207,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `comment_id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -219,7 +225,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
