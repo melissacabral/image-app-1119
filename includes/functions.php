@@ -78,9 +78,10 @@ function clean_email( $dirty ){
 
 //Form Feedback Output HTML - Error or success
 function feedback_display( $message, $class = 'error', $list = array() ){
+	if(isset($message)){
 	?>
 	<div class="feedback <?php echo $class; ?>">
-		<h2><?php echo $message; ?></h2>
+		<h5><?php echo $message; ?></h5>
 		
 		<?php if( ! empty($list) ){ ?>
 		<ul>
@@ -92,6 +93,7 @@ function feedback_display( $message, $class = 'error', $list = array() ){
 
 	</div>
 	<?php
+	}
 }
 
 

@@ -16,7 +16,7 @@ require( 'includes/register-parse.php' );
 </head>
 <body>
 
-	<section class="big-section">
+	<section class="narrow-section">
 		<h1>Create an Account</h1>
 		<p>Become a member so you can upload posts, comment and like other posts</p>
 
