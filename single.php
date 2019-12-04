@@ -83,7 +83,7 @@ if( $_POST['did_comment'] ){
 									alt="<?php echo $post['title']; ?>" class="post-image">
 									<h3><?php echo $post['title']; ?></h3>
 									<h4><?php echo $post['username']; ?></h4>
-									<h5><?php count_comments( $post['post_id'] ); ?></h5>
+									<span class="comment-count"><?php count_comments( $post['post_id'] ); ?></span>
 	
 									<p><?php echo $post['body']; ?></p>
 	
