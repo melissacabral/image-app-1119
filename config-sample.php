@@ -15,7 +15,7 @@ define( 'SALT', '895srthh%^$VHNH21%$NBnwerklj558!)&#^#85SDG@&*56VS' );
 
 
 //==============STOP EDITING===========
-
+session_start(); 
 //error reporting
 if( DEBUG_MODE ){
 	// error_reporting( E_ALL );
