@@ -97,4 +97,34 @@ function feedback_display( $message, $class = 'error', $list = array() ){
 }
 
 
+//Check to see if the viewer is logged in. If so, get all the user info
+function check_login(){
+	global $db;
+	if( isset($_SESSION['secret_key']) AND isset($_SESSION['user_id']) ){
+		//check to see if these keys match the DB
+		$secret_key = $_SESSION['secret_key'];
+		$user_id = $_SESSION['user_id'];
+
+		$sql = "SELECT * FROM users
+				WHERE user_id = $user_id
+				AND secret_key = '$secret_key'
+				LIMIT 1";
+
+		$result = $db->query($sql);
+		if(! $result){
+			return false;
+		}
+		if($result->num_rows == 1){
+			//success! return all the info about the logged in user
+			return $result->fetch_assoc();
+		}else{
+			return false;
+		}
+	}else{
+		//not logged in
+		return false;
+	}
+}
+
+
 //no close php

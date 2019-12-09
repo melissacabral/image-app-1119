@@ -3,6 +3,18 @@
 	<main class="wrapper">
 
 		<section class="hero">
+			<?php if($logged_in_user){
+			?>
+			<div class="container">
+				<h1>Welcome Back, <?php echo $logged_in_user['username'] ?>!</h1>
+				<a class="button" href="#">Upload an Image</a>
+				<a class="button button-outline" href="#">View Your Profile</a>
+
+			</div>
+
+
+			<?php }else{ ?>
+
 			<div class="container">
 
 				<?php //get all the categories in alpha order
@@ -33,6 +45,7 @@
 				} ?>
 
 			</div>
+		<?php }//end if logged in user ?>
 		</section>
 
 		<section class="container big-section">

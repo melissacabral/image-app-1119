@@ -1,5 +1,16 @@
 <?php if( DEBUG_MODE ){ ?>
 <div class="debug-output">
+	<?php 
+	if( $logged_in_user ){
+	?>
+	<h2>$logged_in_user:</h2>
+	<pre><?php print_r( $logged_in_user ); ?></pre>
+	<?php 	
+	}else{
+		echo '<h2>Not Logged In</h2>';
+	}
+	?>
+	
 	<h2>POST data:</h2>
 	<pre><?php print_r( $_POST ); ?></pre>
 

@@ -2,7 +2,7 @@ TODO
 ====
 
 
-* make the login form
+
 
 * remove hidden field ofrom comment form so it works with the login system
 
@@ -32,3 +32,7 @@ DONE
 * make the SALT
 * Add the secret key field
 * make the register form
+
+* make the login form
+* make logout
+* make function to check login on every page
