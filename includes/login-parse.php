@@ -51,19 +51,19 @@ if( isset($_POST['did_login'])){
 
 			$_SESSION['secret_key'] = $secret_key;
 			$_SESSION['user_id'] = $user_id;
-
-			//redirect TODO: uncomment this
+			
 			header('Location:index.php');
 			
-			$feedback = 'Success! You are now logged in';
 		}else{
 			//problem with db
 			$feedback = 'Login Failed';
+			$feeeback_class = 'error';
 		}
 
 	}else{
 		//error
 		$feedback = 'Your username/Password combo is incorrect. Try again :-)';
+		$feedback_class = 'error';
 	}
 
 }//end of if('did_login') statement
