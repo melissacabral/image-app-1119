@@ -14,20 +14,11 @@ require( 'includes/login-parse.php' );
 	<link rel="stylesheet" type="text/css" href="styles/milligram.css">
 </head>
 <body>
-	
-
-
-
-	<div class="login-form">
+	<section class="narrow-section">
 		<h1>Log In</h1>
 
 		<!-- This will hide the feedback pink div  -->
-		<?php if(isset($feedback)){ ?>
-			<!-- Feedback that will show on top of form -->
-			<div class="feedback">
-				<?php echo $feedback; ?>
-			</div>
-		<?php } ?>
+		<?php feedback_display( $feedback, $feedback_class ); ?>
 
 		<form method="post" action="login.php">
 
@@ -45,9 +36,7 @@ require( 'includes/login-parse.php' );
 		</form>
 
 		<div class="cookiemessage">This site uses cookies<a href="tos.php">Read our terms and conditions</a></div>
-	</div>
-
-	<!-- This gets information from debug-output.php -->
+	</section>
 	<?php include('includes/debug-output.php'); ?>
 </body>
 </html>
