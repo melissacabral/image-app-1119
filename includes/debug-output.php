@@ -14,6 +14,9 @@
 	<h2>POST data:</h2>
 	<pre><?php print_r( $_POST ); ?></pre>
 
+	<h2>FILES data:</h2>
+	<pre><?php print_r( $_FILES ); ?></pre>
+
 	<h2>COOKIE data:</h2>
 	<pre><?php print_r( $_COOKIE ); ?></pre>
 
