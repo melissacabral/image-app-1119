@@ -28,7 +28,7 @@ $logged_in_user = check_login();
 				<?php //logged in menu 
 				if( $logged_in_user ){?>
 
-					<li><a href="#" class="button button-clear">Upload</a></li>
+					<li><a href="upload.php" class="button button-clear">Upload</a></li>
 					<li><a href="#" class="button button-clear">
 						<?php echo $logged_in_user['username']; ?>
 					</a></li>

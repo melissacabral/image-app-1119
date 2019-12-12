@@ -91,9 +91,10 @@ if( $_POST['did_add_post'] ){
 
 			if( $db->affected_rows == 1 ){
 				//success! 
-				//TODO: redirect to step 2
-				$feedback = "Success! Post saved in Database";
-				$feedback_class = 'success';
+				//redirect to step 2
+				$post_id = $db->insert_id;
+				header( "Location:edit-post.php?post_id=$post_id" );
+
 			}else{
 				//db failed. show error
 				$feedback = 'Error. Post not addded';

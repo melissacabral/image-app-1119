@@ -76,7 +76,7 @@
 				<div class="post">
 					<!-- <pre><?php print_r($post); ?></pre> -->
 					<a href="single.php?post_id=<?php echo $post['post_id']; ?>">
-						<img src="<?php echo $post['image']; ?>" 
+						<img src="<?php image_url( $post['post_id'] ); ?>" 
 							alt="<?php echo $post['title']; ?>" class="post-image">
 					</a>
 					<h3><?php echo $post['title']; ?></h3>

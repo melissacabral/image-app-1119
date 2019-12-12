@@ -56,7 +56,7 @@ if( $_POST['did_comment'] ){
 			<section class="column">
 	
 					<?php //get the one post we are trying to view
-					$sql = "SELECT posts.post_id, posts.title, posts.body, posts.date, posts.image, categories.*, users.username
+					$sql = "SELECT posts.post_id, posts.title, posts.body, posts.date, posts.image, categories.*, users.username, posts.user_id
 					FROM posts, categories, users
 					WHERE posts.category_id = categories.category_id
 					AND posts.user_id = users.user_id
@@ -79,8 +79,17 @@ if( $_POST['did_comment'] ){
 								<div class="post">
 									<!-- <pre><?php print_r($post); ?></pre> -->
 	
-									<img src="<?php echo $post['image']; ?>" 
+									<img src="<?php image_url( $post['post_id'], 'large' ); ?>" 
 									alt="<?php echo $post['title']; ?>" class="post-image">
+
+		<?php 
+		//if logged in as the author of this post, show the edit button
+		if( $post['user_id'] == $logged_in_user['user_id'] ){ ?>
+		<a href="edit-post.php?post_id=<?php echo $post['post_id'] ?>" class="button">
+			Edit Post
+		</a>
+		<?php } ?>
+
 									<h3><?php echo $post['title']; ?></h3>
 									<h4><?php echo $post['username']; ?></h4>
 									<span class="comment-count"><?php count_comments( $post['post_id'] ); ?></span>

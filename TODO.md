@@ -1,10 +1,7 @@
 TODO
 ====
 
-
-
-
-* remove hidden field ofrom comment form so it works with the login system
+* remove hidden field from comment form so it works with the login system
 
 
 DONE
@@ -36,3 +33,11 @@ DONE
 * make the login form
 * make logout
 * make function to check login on every page
+
+* Make the "upload new post" form
+	* step 1: upload image
+* make the upload/edit
+	* step 2: make a form to edit the title, body, category, etc
+
+* make a func to display any post image at a desired size
+* add the "edit" button when a user is looking at their own post

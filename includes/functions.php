@@ -126,5 +126,38 @@ function check_login(){
 	}
 }
 
+//Get the URL of any post image, at any defined size
+function image_url($post_id = 0, $size = 'thumb'){
+	global $db;
+		//get  the image
+	$query = "SELECT image FROM posts WHERE post_id = $post_id LIMIT 1";
+	$result = $db->query($query);
+
+	if(! $result){
+		die($db->error);
+	}
+
+	$row = $result->fetch_assoc();
+
+	if($row['image']){
+		echo 'uploads/' . $row['image'] . '_' . $size . '.jpg';
+	}
+}
+
+
+//Form input helpers
+//helper function for making "sticky" <option> dropdowns
+function selected( $thing1, $thing2 ){
+	if( $thing1 == $thing2 ){
+		echo 'selected';
+	}
+}
+
+//helper for checkboxes and radio boxes
+function checked( $thing1, $thing2 ){
+	if( $thing1 == $thing2 ){
+		echo 'checked';
+	}
+}
 
 //no close php
